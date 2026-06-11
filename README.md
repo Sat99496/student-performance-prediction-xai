@@ -1,40 +1,39 @@
-# student-performance-prediction-xai
-MSc Dessertation
 # 🎓 Student Performance Prediction using Explainable AI (XAI)
 
 ## Overview
 
-This MSc dissertation project explores how Explainable Artificial Intelligence (XAI) techniques can improve transparency and trust in student performance prediction systems.
+This MSc dissertation project investigates how Explainable Artificial Intelligence (XAI) can improve transparency and trust in student performance prediction systems.
 
-The project develops and evaluates multiple machine learning models to predict whether a student is likely to pass or fail based on demographic, behavioural, academic, and socio-economic factors.
-
-To make predictions understandable and actionable, SHAP and LIME were used to explain both global model behaviour and individual student predictions.
+The project compares multiple machine learning models and applies explainability techniques to understand the factors influencing student success and failure.
 
 ---
 
-## Research Objectives
+## Project Workflow
 
-* Predict student academic performance using machine learning.
-* Compare the performance of Random Forest, Support Vector Machine (SVM), and Multi-Layer Perceptron (MLP).
-* Improve model interpretability using SHAP and LIME.
-* Identify the key factors influencing student success and failure.
-* Support transparent and ethical AI-driven decision making in education.
+Student Dataset
+↓
+Data Preprocessing
+↓
+Feature Engineering
+↓
+Train/Test Split
+↓
+Model Training
+├── Random Forest
+├── Support Vector Machine (SVM)
+└── Multi-Layer Perceptron (MLP)
+↓
+Model Evaluation
+↓
+Explainability Analysis
+├── SHAP
+└── LIME
 
 ---
 
 ## Dataset
 
-Student Performance Dataset (Portuguese Secondary School Students)
-
-Features include:
-
-* Student demographics
-* Family background
-* Study habits
-* Attendance records
-* Educational support
-* Alcohol consumption
-* Academic history
+Dataset: Student Performance Dataset (Portuguese Secondary School Students)
 
 Target Variable:
 
@@ -45,7 +44,7 @@ Target Variable:
 
 ## Feature Engineering
 
-Additional features were created to improve model performance and interpretability:
+Additional features were created to improve model performance:
 
 * Study Efficiency
 * Parent Education Average
@@ -53,7 +52,7 @@ Additional features were created to improve model performance and interpretabili
 * Alcohol Score
 * Stress Level
 * Commitment Ratio
-* High-Risk Indicator
+* High Risk Indicator
 
 ---
 
@@ -61,31 +60,28 @@ Additional features were created to improve model performance and interpretabili
 
 ### Random Forest
 
-* Ensemble learning approach
-* Strong performance on structured datasets
+* Ensemble-based classifier
 * Feature importance support
 
 ### Support Vector Machine (SVM)
 
-* Effective for high-dimensional classification
-* Kernel-based learning
+* Kernel-based classification
 
 ### Multi-Layer Perceptron (MLP)
 
-* Neural network architecture
-* Captures complex non-linear relationships
+* Neural-network-based classifier
 
 ---
 
-## Explainable AI (XAI)
+## Explainable AI Techniques
 
 ### SHAP
 
-Used to identify the global importance of features and understand how different factors influence predictions.
+Used to explain global feature importance and model behaviour.
 
 ### LIME
 
-Used to explain individual student predictions and provide local interpretability.
+Used to explain individual student predictions.
 
 ---
 
@@ -99,6 +95,7 @@ Used to explain individual student predictions and provide local interpretabilit
 * LIME
 * SMOTE
 * Matplotlib
+* Seaborn
 * Jupyter Notebook
 
 ---
@@ -107,30 +104,41 @@ Used to explain individual student predictions and provide local interpretabilit
 
 Best Performing Model:
 
-* Random Forest
-
-Performance:
-
-* Accuracy: 83.07%
-* F1 Score: 0.905
+| Metric   | Score  |
+| -------- | ------ |
+| Accuracy | 83.07% |
+| F1 Score | 0.905  |
 
 Key Findings:
 
-* Previous failures strongly influence future outcomes.
-* Study habits significantly impact performance.
-* Absences negatively affect success rates.
-* Alcohol consumption correlates with lower academic performance.
-* Explainable AI improves trust and transparency in predictive systems.
+* Previous failures strongly influence academic outcomes.
+* Study habits have a significant impact on performance.
+* High absence rates negatively affect student success.
+* Explainability techniques improve trust in predictions.
 
 ---
 
-## Future Enhancements
+## Repository Structure
 
-* Real-time prediction dashboard
-* Interactive educational analytics
-* Fairness and bias monitoring
-* Deployment as a web application
-* Integration with educational support systems
+student-performance-prediction-xai/
+
+├── README.md
+
+├── student_performance_XAI.py
+
+├── requirements.txt
+
+├── dissertation.pdf
+
+---
+
+## Future Improvements
+
+* Interactive dashboard
+* Real-time prediction service
+* Model deployment using Docker
+* Explainability dashboard
+* Cloud deployment
 
 ---
 
