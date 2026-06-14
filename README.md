@@ -2,49 +2,37 @@
 
 ## Overview
 
-This MSc dissertation project investigates how Explainable Artificial Intelligence (XAI) can improve transparency and trust in student performance prediction systems.
+This MSc dissertation project explores how Explainable Artificial Intelligence (XAI) can improve transparency in student performance prediction.
 
-The project compares multiple machine learning models and applies explainability techniques to understand the factors influencing student success and failure.
-
----
-
-## Project Workflow
-
-Student Dataset
-↓
-Data Preprocessing
-↓
-Feature Engineering
-↓
-Train/Test Split
-↓
-Model Training
-├── Random Forest
-├── Support Vector Machine (SVM)
-└── Multi-Layer Perceptron (MLP)
-↓
-Model Evaluation
-↓
-Explainability Analysis
-├── SHAP
-└── LIME
+The project predicts whether a student is likely to pass or fail and explains the factors influencing those predictions using SHAP and LIME.
 
 ---
 
-## Dataset
+## Tech Stack
 
-Dataset: Student Performance Dataset (Portuguese Secondary School Students)
+* Python
+* Pandas
+* Scikit-Learn
+* SHAP
+* LIME
+* SMOTE
+* Matplotlib
 
-Target Variable:
+---
 
-* Pass (G3 ≥ 10)
-* Fail (G3 < 10)
+## Machine Learning Models
+
+| Model                        | Purpose                   |
+| ---------------------------- | ------------------------- |
+| Random Forest                | Ensemble classification   |
+| Support Vector Machine (SVM) | Non-linear classification |
+| Multi-Layer Perceptron (MLP) | Neural network classifier |
 
 ---
 
 ## Feature Engineering
 
-Additional features were created to improve model performance:
+Custom features were created to improve model performance:
 
 * Study Efficiency
 * Parent Education Average
@@ -56,79 +44,44 @@ Additional features were created to improve model performance:
 
 ---
 
-## Machine Learning Models
-
-### Random Forest
-
-* Ensemble-based classifier
-* Feature importance support
-
-### Support Vector Machine (SVM)
-
-* Kernel-based classification
-
-### Multi-Layer Perceptron (MLP)
-
-* Neural-network-based classifier
-
----
-
-## Explainable AI Techniques
+## Explainable AI
 
 ### SHAP
 
-Used to explain global feature importance and model behaviour.
+Used to identify the most influential factors affecting predictions.
 
 ### LIME
 
-Used to explain individual student predictions.
-
----
-
-## Technologies Used
-
-* Python
-* Pandas
-* NumPy
-* Scikit-Learn
-* SHAP
-* LIME
-* SMOTE
-* Matplotlib
-* Seaborn
-* Jupyter Notebook
+Used to explain individual student predictions at a local level.
 
 ---
 
 ## Results
 
-Best Performing Model:
+🏆 Best Model: Random Forest
 
 | Metric   | Score  |
 | -------- | ------ |
 | Accuracy | 83.07% |
 | F1 Score | 0.905  |
 
-Key Findings:
+### Key Findings
 
-* Previous failures strongly influence academic outcomes.
-* Study habits have a significant impact on performance.
-* High absence rates negatively affect student success.
-* Explainability techniques improve trust in predictions.
+* Previous failures strongly influence future performance.
+* Study habits significantly impact outcomes.
+* Absences negatively affect academic success.
+* Explainable AI improves trust and transparency in predictions.
 
 ---
 
-## Repository Structure
+## Repository Contents
 
-student-performance-prediction-xai/
-
-├── README.md
-
-├── student_performance_XAI.py
-
-├── requirements.txt
-
-├── dissertation.pdf
+```text
+README.md
+student_performance_xai.py
+requirements.txt
+MSc_Dissertation_Student_Performance_XAI.pdf
+```
 
 ---
 
@@ -136,8 +89,8 @@ student-performance-prediction-xai/
 
 * Interactive dashboard
 * Real-time prediction service
-* Model deployment using Docker
-* Explainability dashboard
+* Docker deployment
+* Model monitoring
 * Cloud deployment
 
 ---
