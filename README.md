@@ -1,105 +1,188 @@
-# 🎓 Student Performance Prediction using Explainable AI (XAI)
+# 🎓 Student Performance Prediction with Explainable AI (XAI)
 
 ## Overview
 
-This MSc dissertation project explores how Explainable Artificial Intelligence (XAI) can improve transparency in student performance prediction.
+This project investigates the use of Machine Learning and Explainable Artificial Intelligence (XAI) techniques to predict student academic performance. The objective is to identify students at risk of poor academic outcomes and provide interpretable insights into the factors influencing predictions.
 
-The project predicts whether a student is likely to pass or fail and explains the factors influencing those predictions using SHAP and LIME.
-
----
-
-## Tech Stack
-
-* Python
-* Pandas
-* Scikit-Learn
-* SHAP
-* LIME
-* SMOTE
-* Matplotlib
+The project was developed as part of an MSc Dissertation and evaluates multiple machine learning models alongside SHAP and LIME explainability methods.
 
 ---
 
-## Machine Learning Models
+## Research Objectives
 
-| Model                        | Purpose                   |
-| ---------------------------- | ------------------------- |
-| Random Forest                | Ensemble classification   |
-| Support Vector Machine (SVM) | Non-linear classification |
-| Multi-Layer Perceptron (MLP) | Neural network classifier |
+* Predict student academic performance using machine learning models.
+* Compare model performance across multiple algorithms.
+* Address class imbalance using SMOTE.
+* Improve model interpretability using Explainable AI techniques.
+* Identify key factors contributing to student success or failure.
+
+---
+
+## Dataset
+
+The project uses the **UCI Student Performance Dataset**, which contains demographic, social, academic, and behavioural attributes of secondary school students.
+
+Key features include:
+
+* Age
+* Study Time
+* Absences
+* Previous Failures
+* Alcohol Consumption
+* Family Educational Background
+* School Support Programs
+* Social and Lifestyle Factors
+
+Target Variable:
+
+* **Pass (1)** → Final grade ≥ 10
+* **Fail (0)** → Final grade < 10
 
 ---
 
 ## Feature Engineering
 
-Custom features were created to improve model performance:
+Several new features were created to improve predictive performance:
 
-* Study Efficiency
-* Parent Education Average
-* Support Score
-* Alcohol Score
-* Stress Level
-* Commitment Ratio
-* High Risk Indicator
+| Feature          | Description                                       |
+| ---------------- | ------------------------------------------------- |
+| study_efficiency | Study time relative to travel time                |
+| parent_edu_avg   | Average parental education level                  |
+| support_score    | Combined academic support indicators              |
+| alcohol_score    | Combined weekday and weekend alcohol consumption  |
+| stress_level     | Study time + travel time + absences               |
+| commitment_ratio | Study time relative to free time                  |
+| high_risk        | Students with high absences and multiple failures |
 
 ---
 
-## Explainable AI
+## Machine Learning Models
+
+The following models were evaluated:
+
+1. Random Forest
+2. Random Forest with SMOTE
+3. Support Vector Machine (SVM)
+4. Multi-Layer Perceptron (MLP)
+
+---
+
+## Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Scikit-Learn
+* Imbalanced-Learn (SMOTE)
+* Matplotlib
+* SHAP
+* LIME
+
+---
+
+## Results
+
+### ROC Curve
+
+### SHAP Summary Plot
+
+### LIME Explanation
+
+---
+
+## Model Performance
+
+| Model                 | Accuracy | F1 Score | Recall | Precision |
+| --------------------- | -------- | -------- | ------ | --------- |
+| Random Forest         | 0.83     | 0.91     | 0.95   | 0.86      |
+| Random Forest + SMOTE | 0.79     | 0.88     | 0.90   | 0.86      |
+| SVM                   | 0.79     | 0.88     | 0.90   | 0.86      |
+| MLP                   | 0.79     | 0.88     | 0.87   | 0.88      |
+
+The Random Forest model achieved the highest overall performance and was selected for explainability analysis.
+
+---
+
+## Explainable AI (XAI)
 
 ### SHAP
 
-Used to identify the most influential factors affecting predictions.
+SHAP (SHapley Additive exPlanations) was used to identify globally important features influencing model predictions.
+
+Key observations:
+
+* Previous failures strongly impact performance predictions.
+* Alcohol consumption influences academic outcomes.
+* Family educational background contributes positively.
+* Study behaviour and support systems affect student success.
 
 ### LIME
 
-Used to explain individual student predictions at a local level.
+LIME (Local Interpretable Model-Agnostic Explanations) was used to explain individual student predictions by highlighting the factors contributing to a specific prediction.
+
+This enables local-level interpretability and supports educational intervention strategies.
 
 ---
 
-## Results
-
-## Results
-
-![ROC Curve](results/roc_curve.png)
-
-![SHAP Summary Plot](results/shap_summary_plot.png)
-
-![LIME Explanation](results/lime_explanation.png)
-
-### Key Findings
-
-* Previous failures strongly influence future performance.
-* Study habits significantly impact outcomes.
-* Absences negatively affect academic success.
-* Explainable AI improves trust and transparency in predictions.
-
----
-
-## Repository Contents
+## Repository Structure
 
 ```text
-README.md
-student_performance_xai.py
-requirements.txt
-MSc_Dissertation_Student_Performance_XAI.pdf
+student-performance-prediction-xai/
+├── README.md
+├── requirements.txt
+├── src/
+│   └── student_performance_xai.py
+├── results/
+│   ├── roc_curve.png
+│   ├── shap_summary_plot.png
+│   ├── lime_explanation.png
+│   └── model_comparison.csv
+├── dissertation/
+│   └── MSc_Dissertation_Student_Performance_XAI.pdf
+├── notebook/
+└── images/
+```
+
+## Running the Project
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the project:
+
+```bash
+python src/student_performance_xai.py
+```
+
+---
+
+## Dissertation
+
+The complete MSc dissertation can be found in:
+
+```text
+dissertation/MSc_Dissertation_Student_Performance_XAI.pdf
 ```
 
 ---
 
 ## Future Improvements
 
-* Interactive dashboard
-* Real-time prediction service
-* Docker deployment
-* Model monitoring
-* Cloud deployment
+* Hyperparameter optimisation using Optuna.
+* Ensemble learning approaches.
+* Additional explainability techniques.
+* Deployment using Streamlit.
+* Real-time academic risk monitoring dashboards.
 
 ---
 
 ## Author
 
-Purna Satish Dasari
+**Purna Satish Dasari**
 
-MSc Advanced Computer Science (Research)
+MSc Data Science
 
-University of Hertfordshire
+GitHub: https://github.com/Sat99496
