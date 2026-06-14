@@ -58,12 +58,13 @@ Used to explain individual student predictions at a local level.
 
 ## Results
 
-🏆 Best Model: Random Forest
+## Results
 
-| Metric   | Score  |
-| -------- | ------ |
-| Accuracy | 83.07% |
-| F1 Score | 0.905  |
+![ROC Curve](results/roc_curve.png)
+
+![SHAP Summary Plot](results/shap_summary_plot.png)
+
+![LIME Explanation](results/lime_explanation.png)
 
 ### Key Findings
 
