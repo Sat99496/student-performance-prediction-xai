@@ -183,6 +183,6 @@ dissertation/MSc_Dissertation_Student_Performance_XAI.pdf
 
 **Purna Satish Dasari**
 
-MSc Data Science
+MSc Advanced Computer Science
 
 GitHub: https://github.com/Sat99496
