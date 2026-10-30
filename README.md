@@ -20,7 +20,7 @@ The project was developed as part of an MSc Dissertation and evaluates multiple 
 
 ## Dataset
 
-The project uses the **UCI Student Performance Dataset**, which contains demographic, social, academic, and behavioural attributes of secondary school students.
+The project uses the **UCI Student Performance Dataset** (Portuguese language course file, `student-por.csv`, 649 students), which contains demographic, social, academic, and behavioural attributes of secondary school students.
 
 Key features include:
 
@@ -84,9 +84,15 @@ The following models were evaluated:
 
 ### ROC Curve
 
+![ROC curve](results/roc_curve.png)
+
 ### SHAP Summary Plot
 
+![SHAP summary plot](results/shap_summary_plot.png)
+
 ### LIME Explanation
+
+![LIME explanation](results/lime_explanation.png)
 
 ---
 
@@ -131,30 +137,31 @@ student-performance-prediction-xai/
 ├── README.md
 ├── requirements.txt
 ├── src/
-│   └── student_performance_xai.py
+│   └── student_performance_xai.py   # place student-por.csv here
 ├── results/
 │   ├── roc_curve.png
 │   ├── shap_summary_plot.png
 │   ├── lime_explanation.png
 │   └── model_comparison.csv
-├── dissertation/
-│   └── MSc_Dissertation_Student_Performance_XAI.pdf
-├── notebook/
-└── images/
+└── dissertation/
+    └── 23004891-purna satish dasari-fpr.pdf
 ```
 
 ## Running the Project
 
-Install dependencies:
+1. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the project:
+2. Download the dataset from the [UCI Machine Learning Repository – Student Performance](https://archive.ics.uci.edu/dataset/320/student+performance), unzip it, and copy `student-por.csv` into the `src/` folder.
+
+3. Run the script from inside `src/` (results are written to `../results`):
 
 ```bash
-python src/student_performance_xai.py
+cd src
+python student_performance_xai.py
 ```
 
 ---
@@ -163,9 +170,7 @@ python src/student_performance_xai.py
 
 The complete MSc dissertation can be found in:
 
-```text
-dissertation/MSc_Dissertation_Student_Performance_XAI.pdf
-```
+[`dissertation/23004891-purna satish dasari-fpr.pdf`](dissertation/23004891-purna%20satish%20dasari-fpr.pdf)
 
 ---
 
